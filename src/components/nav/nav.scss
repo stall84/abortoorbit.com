@@ -9,7 +9,7 @@ nav {
 
 
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
         grid-gap: 2rem;
         align-items: center;
         
@@ -17,11 +17,15 @@ nav {
 
     li {
         --rotate: -1deg;    // variable
-        transform: rotate(var(--rotate));
+        --scaleUp: 1;
+        // transform: rotate(var(--rotate));
+        transform: scaleX(var(--scaleUp));
+        transition: all 0.7s;
         order: 1;
 
         &:hover {
-            --rotate: 1deg;
+            // --rotate: 1deg;
+            --scaleUp: 1.1;
         }
     }
 

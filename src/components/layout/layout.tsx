@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import NavComponent from "../nav/nav";
 import Footer from "../footer/footer";
+import "./layout.scss";
 import "normalize.css";
 
 
