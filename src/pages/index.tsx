@@ -1,6 +1,6 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
-import NavComponent from "../components/nav-component"
+import NavComponent from "../components/nav/nav"
 
 const pageStyles = {
   color: "#232129",
