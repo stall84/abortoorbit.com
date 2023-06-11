@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import NavComponent from "./nav-component";
-import Footer from "./footer";
+import NavComponent from "../nav/nav";
+import Footer from "../footer/footer";
+import "normalize.css";
 
 
 
