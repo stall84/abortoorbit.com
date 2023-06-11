@@ -1,9 +1,14 @@
+@use "./constants.scss" as *;
+@use "./typography.scss" as *;
+
 :root {
-    --red: #FF4949;
-    --black: #2E2E2E;
-    --yellow: #ffc600;
-    --white: #fff;
-    --grey: #efefef;
+    --red: #{$red};
+    --black: #{$black};
+    --yellow: #{$yellow};
+    --white: #{$white};
+    --grey: #{$grey};
+
+    font-family: 'roboto-reg', -apple-system, sans-serif;
   }
   html {
     // background-image: url(${bg});
