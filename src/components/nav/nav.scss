@@ -1,0 +1,35 @@
+nav {
+    margin-bottom: 3rem;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style: none;
+
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
+        align-items: center;
+        
+    }
+
+    li {
+        --rotate: -1deg;    // variable
+        transform: rotate(var(--rotate));
+        order: 1;
+
+        &:hover {
+            --rotate: 1deg;
+        }
+    }
+
+    a {
+        &:hover {
+            text-decoration: none;
+            color: var(--red);
+        }
+        
+    }
+}

@@ -1,5 +1,6 @@
 import React, { ReactComponentElement } from 'react'
 import { HeadFC, Link, PageProps } from "gatsby"
+import "./nav.scss";
 
 export default function NavComponent(props: any): ReactComponentElement<any> {
 
