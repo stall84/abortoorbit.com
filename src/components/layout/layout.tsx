@@ -9,16 +9,18 @@ import "normalize.css";
 
 export default function Layout(props: any) {
     return (
-        <div>
-            <header>
-                <NavComponent />
-            </header>
-            <main>
-                {props.children}
-            </main>
-            <footer>
-                <Footer />
-            </footer>
+        <div className="site-container">
+            <div className="content-container">
+                <header>
+                    <NavComponent />
+                </header>
+                <main>
+                    {props.children}
+                </main>
+                <footer>
+                    <Footer />
+                </footer>
+            </div>
         </div>
     )
 }

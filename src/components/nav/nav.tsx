@@ -1,6 +1,6 @@
 import React, { ReactComponentElement } from 'react'
 import { HeadFC, Link, PageProps } from "gatsby"
-import LogoComponent from '../../logo/logo';
+import LogoComponent from '../logo/logo';
 import "./nav.scss";
 
 export default function NavComponent(props: any): ReactComponentElement<any> {

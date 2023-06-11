@@ -140,7 +140,7 @@ const links = [
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <div>
-
+      <h1>HOME/LANDING-PAGE</h1>
     </div>
   )
 }
