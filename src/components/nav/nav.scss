@@ -23,10 +23,10 @@ nav {
         transition: all 0.7s;
         order: 1;
 
-        &:hover {
-            // --rotate: 1deg;
-            --scaleUp: 1.1;
-        }
+        // &:hover {
+        //     // --rotate: 1deg;
+        //     --scaleUp: 1.1;
+        // }
     }
 
     a {
@@ -34,6 +34,10 @@ nav {
             text-decoration: none;
             color: var(--red);
         }
-        
+        &[aria-current="page"] {
+            color: var(--red);
+        }
     }
+
+    
 }
