@@ -16,7 +16,7 @@ nav {
     }
 
     li {
-        --rotate: -1deg;    // variable
+        --rotate: 0deg;    // variable
         --scaleUp: 1;
         // transform: rotate(var(--rotate));
         transform: scaleX(var(--scaleUp));

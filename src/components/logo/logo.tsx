@@ -7,8 +7,31 @@ export default function LogoComponent(props: any): React.ReactComponentElement<a
         <div className="logo">
             <Link to="/">
                 <div className="inner">
-                    <h1>
-                        <span className="name">
+
+                    <span className="name">
+                        <span className="letter m">M</span>
+                        <span className="letter i">I</span>
+                        <span className="letter c">C</span>
+                        <span className="letter h">H</span>
+                        <span className="letter a">A</span>
+                        <span className="letter e">E</span>
+                        <span className="letter l">L</span>
+                        <span> </span>
+                        <span> </span>
+                        <span className="letter s">S</span>
+                        <span className="letter t">T</span>
+                        <span className="letter a2">A</span>
+                        <span className="letter l2">L</span>
+                        <span className="letter l3">L</span>
+                        <span className="letter i2">I</span>
+                        <span className="letter n">N</span>
+                        <span className="letter g">G</span>
+                        <span className="letter s2">S</span>
+                    </span>
+
+
+                    <h2>
+                        {/* <span className="name">
                             <span className="letter m">m</span>
                             <span className="letter i">i</span>
                             <span className="letter c">c</span>
@@ -26,8 +49,17 @@ export default function LogoComponent(props: any): React.ReactComponentElement<a
                             <span className="letter n">n</span>
                             <span className="letter g">g</span>
                             <span className="letter s2">s</span>
-                        </span>
-                    </h1>
+                        </span> */}
+
+                        {/* <span className="name">
+                            <span className="letter m">M</span>
+                            <span className="letter s">S</span>
+                        </span> */}
+                        {/* <span className="name">
+                            <span className="letter m">m</span>
+                            <span className="letter s">s</span>
+                        </span> */}
+                    </h2>
                 </div>
             </Link>
         </div>

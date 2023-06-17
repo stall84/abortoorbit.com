@@ -139,9 +139,38 @@ const links = [
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <div>
-      <h1>HOME/LANDING-PAGE</h1>
-    </div>
+    <>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+    </>
   )
 }
 
