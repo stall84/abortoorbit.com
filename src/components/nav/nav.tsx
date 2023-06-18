@@ -12,7 +12,12 @@ export default function NavComponent(props: any): ReactComponentElement<any> {
                     <LogoComponent />
                 </li>
                 <li>
-                    <Link to="/">HOME</Link>
+                    <Link to="/">
+                        <span>H</span>
+                        <span>O</span>
+                        <span>M</span>
+                        <span>E</span>
+                    </Link>
                 </li>
                 <li>
                     <Link to="/blog">BLOG</Link>

@@ -9,7 +9,8 @@ nav {
 
 
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
+        grid-template-columns: 1.5fr 0.5fr 0.5fr 0.5fr;
+        // grid-template-columns: 2fr 1fr 1fr 1fr;
         grid-gap: 2rem;
         align-items: center;
         
@@ -30,13 +31,17 @@ nav {
     }
 
     a {
+        font-size: 3rem;
         &:hover {
             text-decoration: none;
-            color: var(--red);
+            color: var(--darkRed);
         }
         &[aria-current="page"] {
-            color: var(--red);
+            color: var(--darkRed);
         }
+        @media (max-width: 800px) {
+            font-size: 2rem;
+          }
     }
 
     

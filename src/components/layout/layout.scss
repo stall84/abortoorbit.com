@@ -1,13 +1,12 @@
 .site-container {
-  max-width: 1000px;
-  margin: 12rem auto 4rem auto;
-  margin-top: clamp(2rem, 10vw, 12rem);
-  background: red;
-  background-size: 1500px;
+  max-width: 1280px;
+  margin: 5rem auto 4rem auto;
+  margin-top: clamp(5rem, 4vw, 7rem);
+  background: white;
   padding: 5px;       // Fallback if browser doesn't support clamp()
-  padding: clamp(5px, 1vw, 25px);
-  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.044);
-  border: 5px solid white;
+  padding: clamp(5px, 0.5vw, 12px);
+  // box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.044);
+  // border: 5px solid white;
   @media (max-width: 1100px) {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -15,7 +14,24 @@
 
   .content-container {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-container {
+    background: transparent;
+    // box-shadow: 0 0 0.1rem 0.05rem rgba(255, 255, 255, 0.4);
+    // border: none;
+  
+
+    .content-container {
+      background: var(--blueGray);
+      color: var(--grite);
+      padding: 1.5rem;
+    }
+  }
+
+  
 }
 

@@ -141,6 +141,38 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <div>
+        <h4 className="center">Home Page</h4>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+        <h3 className="center">////////////</h3>
+      </div>
+      <div>
+        <h4 className="center">Home Page</h4>
         <h3 className="center">////////////</h3>
         <h3 className="center">////////////</h3>
         <h3 className="center">////////////</h3>

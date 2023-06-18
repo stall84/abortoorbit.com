@@ -3,12 +3,16 @@
 
 :root {
     --red: #{$red};
+    --darkRed: #{$darkRed};
+    --blueGray: #{$blueGray};
+    --darkGray: #{$darkGray};
     --black: #{$black};
+    --slate: #{$slate};
     --yellow: #{$yellow};
     --white: #{$white};
-    --grey: #{$grey};
+    --grite: #{$grite};
 
-    font-family: 'roboto-reg', -apple-system, sans-serif;
+    font-family: 'Roboto-Condensed-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
   }
   html {
     // background-image: url(${bg});
@@ -61,13 +65,13 @@
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--red) var(--white);
+    scrollbar-color: var(--slate) var(--white);
   }
   body::-webkit-scrollbar-track {
     background: var(--white);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--red) ;
+    background-color: var(--slate) ;
     border-radius: 6px;
     border: 3px solid var(--white);
   }
@@ -87,4 +91,18 @@
     transform: rotate(-2deg);
     position: relative;
     display: inline-block;
+  }
+
+  @media (prefers-color-scheme: dark) {
+
+    html {
+      background: var(--blueGray);
+      color: var(--white);
+      scrollbar-width: thin;
+      scrollbar-color: var(--darkGray) var(--darkRed);
+    }
+
+    a {
+      color: var(--grite);
+    }
   }
