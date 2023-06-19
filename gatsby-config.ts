@@ -1,3 +1,4 @@
+import remarkGfm from "remark-gfm"
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
@@ -9,7 +10,9 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap",
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-sass",
       options: {
@@ -21,28 +24,50 @@ const config: GatsbyConfig = {
       options: {
         "icon": "src/images/icon.png"
       }
-    }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+    },
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+        extensions: [`.mdx`, `.md`],
+        // mdxOptions: {  // This is exploding the build for some reason
+        //   remarkPlugins: [remarkGfm]
+        // },
+      }
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "images",
         "path": `${__dirname}/src/images/`
       },
       __key: "images"
-    }, {
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "pages",
         "path": `${__dirname}/src/pages/`
       },
       __key: "pages"
-    }, {
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "posts",
         "path": `${__dirname}/content/posts/`
       },
       __key: "posts"
-    }
+    },
   ]
 };
 
