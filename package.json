@@ -24,11 +24,14 @@
     "gatsby-plugin-sass": "^6.10.0",
     "gatsby-plugin-sharp": "^5.10.0",
     "gatsby-plugin-sitemap": "^6.10.0",
+    "gatsby-remark-images": "^7.11.0",
     "gatsby-source-filesystem": "^5.10.0",
     "gatsby-transformer-sharp": "^5.10.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "reading-time": "^1.5.0",
+    "remark-gfm": "^3.0.1",
     "sass": "^1.63.3"
   },
   "devDependencies": {
