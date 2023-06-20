@@ -3,6 +3,8 @@ import type { GatsbyNode } from "gatsby"
 
 import { CreatePageQueryData } from "./src/types";
 
+import { slugifyFunc } from "./src/utils";
+
 const blogPostTemplate = path.resolve(`src/templates/post-template.tsx`);
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }) => {
@@ -37,7 +39,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
     allMdx.nodes.forEach((mdxNode) => {
         createPage({
-            path: mdxNode.frontmatter.slug,
+            path: `blog/${mdxNode.frontmatter.slug}`,
             component: `${blogPostTemplate}?__contentFilePath=${mdxNode.internal.contentFilePath}`,
             context: { id: mdxNode.id },
         })
