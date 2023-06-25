@@ -7,15 +7,17 @@
 }
 
 @font-face {
-    font-family: 'Roboto-Condensed-Bold';
+    font-family: 'Futura-T-Medium';
+    font-weight: 100 900;
     font-display: swap;
-    src: url(/fonts/RobotoCondensed-Bold.woff2) format('woff2');
+    src: url(/fonts/futura-t-medium.woff2) format('woff2');
 }
 
 @font-face {
-    font-family: 'Roboto-Condensed-Italic';
+    font-family: 'Futura-T-Bold';
+    font-weight: 100 900;
     font-display: swap;
-    src: url(/fonts/RobotoCondensed-Italic.woff2) format('woff2');
+    src: url(/fonts/futura-t-bold.woff2) format('woff2');
 }
 
 @font-face {
@@ -26,23 +28,23 @@
 }
 
 @font-face {
-    font-family: 'Barlow-ExtraLight';
-    font-display: swap;
-    src: url(/fonts/Barlow-ExtraLight.woff2) format('woff2');
-}
-
-@font-face {
     font-family: 'Inter-Reg';
     font-display: swap;
     src: url(/fonts/Inter-Regular.woff2) format('woff2');
 }
 
 @font-face {
-    font-family: 'Inter-Medium';
+    font-family: 'Inter-Variable';
+    font-weight: 100 900;
     font-display: swap;
-    src: url(/fonts/Inter-Medium.woff2) format('woff2');
+    src: url(/fonts/Inter-Variable.woff2) format('woff2');
 }
 
+@font-face {
+    font-family: 'Inter-Bold';
+    font-display: swap;
+    src: url(/fonts/Inter-Bold.woff2) format('woff2');
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;

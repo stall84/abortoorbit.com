@@ -12,3 +12,5 @@ export const slugifyFunc: slugify = (source, basePath) => {
 
     return `/${basePath}/${postfix}`.replace(/\/\/+/g, "/")
 }
+
+export const roundReadingTime = (minutesFloat: number) => (minutesFloat < 1 ? Math.ceil(minutesFloat) : Math.round(minutesFloat))
