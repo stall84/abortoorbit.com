@@ -15,7 +15,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         query {
             allMdx {
                 nodes {
-                    body
                     id
                     frontmatter {
                         slug

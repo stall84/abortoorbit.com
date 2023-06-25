@@ -1,27 +1,57 @@
 import React from "react"
 import { Link, graphql, PageProps, HeadFC, HeadProps } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
-import { PostTemplateDataProps } from "../../types/page-components"
+// import { PostTemplateDataProps } from "../../types/page-components"
 import SEO from "../../components/seo";
 import readingTime from "reading-time";
 import { roundReadingTime } from "../../utils";
 import "./post-template.scss"
 
+export type PostTemplateDataProps = {
+    mdx: {
+        body?: string
+        frontmatter: {
+            slug: string
+            title: string
+            date: string
+            description: string
+            excerpt?: string
+            timeToRead?: number
+            canonicalUrl?: string
+            bannerImage?: {
+                childImageSharp: {
+                    resize: {
+                        src: string
+                    }
+                }
+            }
+            tags?: Array<{
+                name: string
+                slug: string
+            }>
+        }
+    }
+}
+
 const shortcodes = { Link, } // Provide common components in an object here (passing gatsbys Link to all mdx components (provided for convenience))
 
 export default function BlogPostTemplate({ data, children }: PageProps<PostTemplateDataProps>): React.ReactComponentElement<any> {
     const { title, date, tags, description, slug, bannerImage } = data.mdx.frontmatter;
-    const formattedDate = new Date(date).toDateString();
+
     return (
         <section className="blog-post-template-container">
-            <h1>{title}</h1>
-            <time>{formattedDate}</time>
+            <div className="blog-post-template-titlebox">
+                <div className="page-h1-wrapper">
+                    <h1>{title}</h1>
+                </div>
+                <time>{date}</time>
+            </div>
 
-            <hr />
-            <br />
-            <MDXProvider components={shortcodes} >
-                {children}
-            </MDXProvider>
+            <div className="blog-post-template-provider">
+                <MDXProvider components={shortcodes} >
+                    {children}
+                </MDXProvider>
+            </div>
         </section>
     )
 
@@ -44,9 +74,12 @@ export const query = graphql`
             frontmatter {
                 slug 
                 title
-                date
+                date(formatString: "MM-DD-YYYY")
                 description
-                tags 
+                tags {
+                    name
+                    slug
+                }
             }
         }
 
