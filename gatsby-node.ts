@@ -1,9 +1,12 @@
 import path from "path";
+import readingTime from "reading-time";
 import type { GatsbyNode } from "gatsby"
 
-import { CreatePageQueryData } from "./src/types";
+import { CreatePageQueryData } from "./src/types/node-types";
 
-const blogPostTemplate = path.resolve(`src/templates/post-template.tsx`);
+import { slugifyFunc } from "./src/utils";
+
+const blogPostTemplate = path.resolve(`src/templates/post-template/post-template.tsx`);
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions;
@@ -37,9 +40,9 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
     allMdx.nodes.forEach((mdxNode) => {
         createPage({
-            path: mdxNode.frontmatter.slug,
+            path: `blog${mdxNode.frontmatter.slug}`,
             component: `${blogPostTemplate}?__contentFilePath=${mdxNode.internal.contentFilePath}`,
-            context: { id: mdxNode.id },
+            context: { slug: mdxNode.frontmatter.slug },
         })
     })
     reporter.info('*** createPages routine finished successfully ***')

@@ -1,7 +1,5 @@
 .logo {
-
-    // display: inline-block;
-
+    font-family: 'Barlow-Medium', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
     .inner {
         h1 {
             margin: 0
@@ -13,6 +11,7 @@
         display: block;
         text-shadow: 0.18em 0.18em 0 rgba(0, 0, 0, 0.05);
         perspective: 100px;
+        letter-spacing: 0.08em;
 
         .letter {
             // Variable declarations
@@ -23,7 +22,7 @@
             --rotateX: 0deg;
             //////////////////
             // font-size: 3rem;
-            font-size: 3rem;
+            font-size: 3.2rem;
             line-height: 1;
             display: inline-block;      // Without this, no transforms will work.
             transform: scale(var(--scale)) translateY(var(--translateY));

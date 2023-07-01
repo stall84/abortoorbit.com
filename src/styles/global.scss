@@ -12,7 +12,7 @@
     --white: #{$white};
     --grite: #{$grite};
 
-    font-family: 'Roboto-Condensed-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
+    font-family: 'Barlow-Reg', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
   }
   html {
     // background-image: url(${bg});
@@ -105,4 +105,14 @@
     a {
       color: var(--grite);
     }
+  }
+
+  // Global classes for pages/posts
+
+  .page-h1-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--grite);
   }

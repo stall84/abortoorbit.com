@@ -1,0 +1,23 @@
+.blog-post-template-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    h1 {
+        font-size: 5rem;
+        color: var(--darkGray);
+    }
+
+    
+}
+
+.blog-post-template-titlebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.blog-post-template-provider {
+    margin-top: 6rem;
+}

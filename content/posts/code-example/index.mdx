@@ -1,0 +1,63 @@
+---
+title: Code Block Examples
+date: 2023-06-19
+slug: /code-block-examples
+tags:
+  - name: code
+    slug: /code
+  - name: examples
+    slug: /examples
+  - name: test
+    slug: /test
+description: Code Block Examples with some inline templating to test.
+---
+
+## Default Abilities with MDX
+
+Take a look at the following block of code.. We will take a look after the page builds.
+
+#### Javascript: The language of the web
+
+```js
+(function() {
+
+var cache = {};
+var form = $('form');
+var minified = true;
+
+var dependencies = {};
+
+var treeURL = 'https://api.github.com/repos/PrismJS/prism/git/trees/gh-pages?recursive=1';
+var treePromise = new Promise(function(resolve) {
+  $u.xhr({
+    url: treeURL,
+    callback: function(xhr) {
+      if (xhr.status < 400) {
+        resolve(JSON.parse(xhr.responseText).tree);
+      }
+    }
+  });
+});
+```
+
+#### Markup (HTML): The structure of the web
+
+```html
+<div class="somethin-dumb">
+  <p>Something dumb</p>
+</div>
+```
+
+#### CSS: The style of the web
+
+```css
+.somethin-dumb {
+  color: red;
+}
+```
+
+- Check out this [link](https://google.com) for more information.
+
+- Also here's an image of _minified_ [javascript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+
+![code-block-examples-image-1](./code-block-ex-img1.jpeg)

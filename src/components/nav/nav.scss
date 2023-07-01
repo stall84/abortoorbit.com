@@ -1,9 +1,11 @@
 nav {
-    margin-bottom: 4rem;
+    --rotate: 0deg;    // variable
+    --scaleUp: 1;
+    margin-bottom: 18rem;
 
     ul {
         margin: 0;
-        padding: 0;
+        padding-bottom: 2rem;
         text-align: center;
         list-style: none;
 
@@ -13,13 +15,12 @@ nav {
         // grid-template-columns: 2fr 1fr 1fr 1fr;
         grid-gap: 2rem;
         align-items: center;
-        
-    }
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+    }   border-bottom-color: var(--slate)
 
     li {
-        --rotate: 0deg;    // variable
-        --scaleUp: 1;
-        // transform: rotate(var(--rotate));
+
         transform: scaleX(var(--scaleUp));
         transition: all 0.7s;
         order: 1;
