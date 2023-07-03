@@ -1,18 +1,39 @@
+locals {
+  ato-web-distro-origin-id = "ato-web-bucket-origin"
+}
+
 resource "aws_cloudfront_distribution" "ato-web-distribution" {
   origin {
-    domain_name = aws_s3_bucket.ato-web-bucket.bucket_regional_domain_name
-    origin_id   = aws_s3_bucket.ato-web-bucket.id
+    domain_name = aws_s3_bucket_website_configuration.ato-site-config.website_endpoint
+    origin_id   = local.ato-web-distro-origin-id
+
+    custom_origin_config {
+      http_port              = "80"
+      https_port             = "443"
+      origin_protocol_policy = "http-only"
+      origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
+    }
+
   }
+
+
 
   enabled             = true
   is_ipv6_enabled     = true
+  http_version        = "http2"
   comment             = "ato-web-distribution"
   default_root_object = "index.html"
+
+  aliases = [
+    var.domain_name,
+    var.www_domain_name
+  ]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
     cached_methods   = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id = aws_s3_bucket.ato-web-bucket.id
+    target_origin_id = local.ato-web-distro-origin-id
+    compress         = true
 
     forwarded_values {
       query_string = false

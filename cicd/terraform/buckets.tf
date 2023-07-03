@@ -1,10 +1,15 @@
 resource "aws_s3_bucket" "ato-web-bucket" {
   bucket = "ato-web-bucket-aborttoorbit.com"
-  acl    = "public-read"
+  # acl    = "public-read"
   tags = {
     Name        = "ato-web-bucket"
     Environment = "Production"
   }
+
+}
+
+resource "aws_s3_bucket_website_configuration" "ato-site-config" {
+  bucket = aws_s3_bucket.ato-web-bucket.id
 
   index_document {
     suffix = "index.html"
@@ -14,7 +19,7 @@ resource "aws_s3_bucket" "ato-web-bucket" {
   }
 }
 
-resource "aws_s3_bucket_block_public_access" "ato-web-aws_s3_bucket_public_access" {
+resource "aws_s3_bucket_public_access_block" "ato-web-bucket-public-access" {
   bucket = aws_s3_bucket.ato-web-bucket.id
 
   block_public_acls       = false
@@ -41,6 +46,10 @@ resource "aws_s3_bucket_policy" "ato-web-bucket-policy" {
   policy = data.aws_iam_policy_document.ato-web-bucket-policy-document.json
 }
 
-locals {
-  https = data.aws_acm_certificate.ato_issued.arn != ""
+resource "aws_s3_object" "ato-static-objects" {
+  for_each = fileset("${path.module}/../../public", "**")
+  bucket   = aws_s3_bucket.ato-web-bucket.id
+  key      = each.value
+  source   = "${path.module}/../../public/${each.value}"
+  etag     = filemd5("${path.module}/../../public/${each.value}")
 }
