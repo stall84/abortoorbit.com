@@ -1,0 +1,11 @@
+
+# Misc
+**/.DS_Store
+LICENSE.md
+README.md
+
+# MacOS
+.DS_Store
+
+#Node modules
+node_modules/**
