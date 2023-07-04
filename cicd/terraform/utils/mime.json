@@ -1,0 +1,19 @@
+{
+    ".js": "text/javascript",
+    ".xml": "application/xml",
+    ".json": "application/json",
+    ".map": "application/json",
+    ".manifest": "application/manifest+json",
+    ".css": "text/css",
+    ".html": "text/html",
+    ".md": "text/markdown",
+    ".jpg": "image/jpeg",
+    ".svg": "image/svg+xml",
+    ".png": "image/png",
+    ".woff2": "font/woff2",
+    ".mp4": "video/mp4",
+    ".heic": "image/heic",
+    ".heif": "image/heif",
+    ".webp": "image/webp",
+    ".gif": "image/gif"
+}

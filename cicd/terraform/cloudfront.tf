@@ -26,8 +26,14 @@ resource "aws_cloudfront_distribution" "ato-web-distribution" {
 
   aliases = [
     var.domain_name,
-    var.www_domain_name
+    # var.www_domain_name
   ]
+
+  logging_config {
+    include_cookies = false
+    bucket          = aws_s3_bucket.ato-cf-logging-bucket.bucket_domain_name
+    prefix          = "ato-web-cf-logs/"
+  }
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
