@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
-import NavComponent from "../nav/nav";
-import Footer from "../footer/footer";
-import "./layout.scss";
+import NavComponent from "../nav";
+import Footer from "../footer";
+import { siteContainer, contentContainer } from "./layout.module.scss";
 import "normalize.css";
 
 
 
 export default function Layout(props: any) {
     return (
-        <div className="site-container">
-            <div className="content-container">
+        <div className={siteContainer}>
+            <div className={contentContainer}>
                 <header>
                     <NavComponent />
                 </header>

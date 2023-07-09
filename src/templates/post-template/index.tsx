@@ -5,7 +5,7 @@ import { MDXProvider } from "@mdx-js/react"
 import SEO from "../../components/seo";
 import readingTime from "reading-time";
 import { roundReadingTime } from "../../utils";
-import "./post-template.scss"
+import { blogPostTemplateContainer, blogPostTemplateTitlebox, blogPostTemplateProvider } from "./post-template.module.scss"
 
 export type PostTemplateDataProps = {
     mdx: {
@@ -39,15 +39,15 @@ export default function BlogPostTemplate({ data, children }: PageProps<PostTempl
     const { title, date, tags, description, slug, bannerImage } = data.mdx.frontmatter;
 
     return (
-        <section className="blog-post-template-container">
-            <div className="blog-post-template-titlebox">
+        <section className={blogPostTemplateContainer}>
+            <div className={blogPostTemplateTitlebox}>
                 <div className="page-h1-wrapper">
                     <h1>{title}</h1>
                 </div>
                 <time>{date}</time>
             </div>
 
-            <div className="blog-post-template-provider">
+            <div className={blogPostTemplateProvider}>
                 <MDXProvider components={shortcodes} >
                     {children}
                 </MDXProvider>

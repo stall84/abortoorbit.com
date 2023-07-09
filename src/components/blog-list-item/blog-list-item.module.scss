@@ -1,21 +1,27 @@
 
 .blog-list-item-box {
+    
     box-sizing: border-box;
     margin-bottom: 4rem;
     font-size: 1.9rem;
 
+
     a {
-        color: var(--blueGray);
+        color: var(--red);
         text-decoration: none;
+        font-style: bold;
         &:hover {
             text-decoration: underline;
-            color: var(--darkRed);
+            // color: var(--darkRed);
         }
     }
+
+    
 }
 
 .blog-list-item-date-tags {
-    margin-top: 0.5rem;
+    // margin-top: 0.5rem;
+
     box-sizing: inherit;
-    font-size: 1.6rem;
+    font-style: italic;
 }

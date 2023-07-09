@@ -1,7 +1,7 @@
 import React from "react";
 
 
-import "./blog-listing.scss"
+import { blogListingSection } from "./blog-listing.module.scss"
 import BlogListItemComponent from "../blog-list-item";
 
 export type BlogListingProps = {
@@ -26,7 +26,7 @@ export type BlogListingProps = {
 export default function BlogListingComponent({ nodes, className = '', showTags = true }: BlogListingProps): React.ReactComponentElement<any> {
 
   return (
-    <section className="blog-listing-section">
+    <section className={blogListingSection}>
       {nodes.map((node) => {
         return (
           <BlogListItemComponent node={node} />
