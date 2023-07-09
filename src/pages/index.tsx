@@ -1,6 +1,6 @@
 import * as React from "react"
 import { HeadFC, PageProps, Link } from "gatsby"
-import NavComponent from "../components/nav/nav"
+import NavComponent from "../components/nav"
 import "../styles/home-page.scss"
 
 

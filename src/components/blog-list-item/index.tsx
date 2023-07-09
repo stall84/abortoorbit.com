@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby"
 // import { BlogListItemProps } from "../../types/page-components";
-import "./blog-list-item.scss"
+import { blogListItemBox, blogListItemDateTags } from "./blog-list-item.module.scss"
 
 export type BlogListItemProps = {
     node: {
@@ -25,17 +25,17 @@ export type BlogListItemProps = {
 export default function BlogListItemComponent({ node }: BlogListItemProps): React.ReactComponentElement<any> {
     return (
         <>
-            <div className="blog-list-item-box">
+            <div className={blogListItemBox}>
                 {/* Reach's Router has some funky parsing happening within the 'to' attribute (object)..
                 you can however use unix-like directory syntax.. here we use '.' for current route 'blog' */}
                 <Link to={`.${node.frontmatter.slug}`}>
                     {node.frontmatter.title}
                 </Link>
-                <div className="blog-list-item-date-tags">
+                <div >
                     <time>{node.frontmatter.date}</time>
                     <>
                         {` - `}
-                        {node.frontmatter.tags ? node.frontmatter.tags.map((tag) => <span>{tag.name}, </span>) : null}
+                        {node.frontmatter.tags ? node.frontmatter.tags.map((tag) => <span className={blogListItemDateTags}>{tag.name}, </span>) : null}
                     </>
                 </div>
 

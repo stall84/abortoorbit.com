@@ -1,9 +1,9 @@
-nav {
+.nav-component {
     --rotate: 0deg;    // variable
     --scaleUp: 1;
     margin-bottom: 18rem;
 
-    ul {
+    .nav-list {
         margin: 0;
         padding-bottom: 2rem;
         text-align: center;
@@ -17,33 +17,28 @@ nav {
         align-items: center;
         border-bottom-style: solid;
         border-bottom-width: 1px;
-    }   border-bottom-color: var(--slate)
+        border-bottom-color: var(--slate);
+    }
 
-    li {
+    .nav-item {
 
         transform: scaleX(var(--scaleUp));
         transition: all 0.7s;
         order: 1;
 
-        // &:hover {
-        //     // --rotate: 1deg;
-        //     --scaleUp: 1.1;
-        // }
-    }
-
-    a {
-        font-size: 3rem;
-        &:hover {
-            text-decoration: none;
-            color: var(--darkRed);
+        a {
+            font-size: 3rem;
+            &:hover {
+                text-decoration: none;
+                color: var(--darkRed);
+            }
+            &[aria-current="page"] {
+                color: var(--darkRed);
+            }
+            @media (max-width: 800px) {
+                font-size: 2rem;
+              }
         }
-        &[aria-current="page"] {
-            color: var(--darkRed);
-        }
-        @media (max-width: 800px) {
-            font-size: 2rem;
-          }
     }
-
     
 }

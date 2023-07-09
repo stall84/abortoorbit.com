@@ -6,7 +6,7 @@ import { CreatePageQueryData } from "./src/types/node-types";
 
 import { slugifyFunc } from "./src/utils";
 
-const blogPostTemplate = path.resolve(`src/templates/post-template/post-template.tsx`);
+const blogPostTemplate = path.resolve(`src/templates/post-template/index.tsx`);
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions;

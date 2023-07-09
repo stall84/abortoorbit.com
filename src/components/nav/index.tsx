@@ -1,28 +1,23 @@
 import React, { ReactComponentElement } from 'react'
 import { HeadFC, Link, PageProps } from "gatsby"
-import LogoComponent from '../logo/logo';
-import "./nav.scss";
+import LogoComponent from '../logo';
+import { navComponent, navList, navItem } from "./nav.module.scss";
 
 export default function NavComponent(props: any): ReactComponentElement<any> {
 
     return (
-        <nav>
-            <ul>
-                <li>
+        <nav className={navComponent}>
+            <ul className={navList}>
+                <li className={navItem}>
                     <LogoComponent />
                 </li>
-                <li>
-                    <Link to="/">
-                        <span>H</span>
-                        <span>O</span>
-                        <span>M</span>
-                        <span>E</span>
-                    </Link>
+                <li className={navItem}>
+                    <Link to="/">HOME</Link>
                 </li>
-                <li>
+                <li className={navItem}>
                     <Link to="/blog">BLOG</Link>
                 </li>
-                <li>
+                <li className={navItem}>
                     <Link to="/about">ABOUT</Link>
                 </li>
             </ul>
