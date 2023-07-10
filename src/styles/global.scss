@@ -7,6 +7,7 @@
     --blueGray: #{$blueGray};
     --darkGray: #{$darkGray};
     --black: #{$black};
+    --blue: #{$blue};
     --slate: #{$slate};
     --yellow: #{$yellow};
     --white: #{$white};
@@ -14,6 +15,12 @@
 
     font-family: 'Barlow-Reg', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
   }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
   html {
     // background-image: url(${bg});
     background-size: 450px;
@@ -23,6 +30,12 @@
 
   body {
     font-size: 2rem;
+    @media screen and (max-width: 800px) {
+      margin: 0;
+      padding: 0;
+      font-size: 1.5rem;
+    }
+      
   }
 
   a {

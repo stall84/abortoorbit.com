@@ -12,10 +12,21 @@
     margin-right: 1.5rem;
   }
 
-  .content-container {
-    background: white;
-    padding: 1.5rem;
+}
+
+.content-container {
+  background: white;
+  padding: 1.5rem;
+
+}
+
+@media screen and (max-width: 800px) {
+  .site-container,
+  .content-container { 
+    margin: 0;
+    padding: 0;
   }
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,7 +39,6 @@
     .content-container {
       background: var(--blueGray);
       color: var(--grite);
-      padding: 1.5rem;
     }
   }
 

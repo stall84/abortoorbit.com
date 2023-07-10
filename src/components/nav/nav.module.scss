@@ -2,6 +2,9 @@
     --rotate: 0deg;    // variable
     --scaleUp: 1;
     margin-bottom: 18rem;
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
 
     .nav-list {
         margin: 0;
@@ -42,3 +45,48 @@
     }
     
 }
+
+.mobile-nav-component {
+    display: none;
+    @media screen and (max-width: 800px) {
+        display: block;
+        position: relative;
+    }
+
+    .mobile-nav-menu {
+        padding: 1.5rem 3rem 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+    // The overlay container and its contents (nav items) could be un-nested, but leaving it
+    // nested to make it easier to see the structure.
+    .mobile-nav-overlay-container {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        background-color: var(--red);
+        padding-top: 3rem;
+    
+    .mobile-nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        .mobile-nav-item {
+            padding: 1rem 3rem;
+            font-size: 3rem;
+
+        }
+    
+    }
+
+}
+
+}
+
+
+
+
