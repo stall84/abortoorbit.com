@@ -1,9 +1,7 @@
 .logo {
     font-family: 'Barlow-Medium', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
-    .inner {
-        h1 {
-            margin: 0
-        }
+    @media screen and (max-width: 800px) {
+        display: none;
     }
 
     .name {
@@ -39,8 +37,17 @@
             }
         }
       }
-
-      
-
     
 }
+
+.mobile-logo {
+    
+    display: none; 
+    
+    @media screen and (max-width: 800px){
+        font-family: 'Barlow-Medium', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
+        text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+        display: block;
+        font-size: 5rem;
+    }
+} 
