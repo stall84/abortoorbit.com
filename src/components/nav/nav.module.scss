@@ -51,17 +51,20 @@
     @media screen and (max-width: 800px) {
         display: block;
         position: relative;
+        
     }
 
     .mobile-nav-menu {
         padding: 1.5rem 3rem 0 3rem;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         list-style: none;
     }
     // The overlay container and its contents (nav items) could be un-nested, but leaving it
     // nested to make it easier to see the structure.
     .mobile-nav-overlay-container {
+        left: -2rem;    // Coordinate with the .content-container in layout.module.scss
         position: absolute;
         width: 100vw;
         height: 100vh;

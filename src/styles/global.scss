@@ -22,13 +22,12 @@
   }
 
   html {
-    // background-image: url(${bg});
-    background-size: 450px;
-    background-attachment: fixed;
+    height: 100%;
     font-size: 10px;
   }
 
   body {
+    height: 100%;
     font-size: 2rem;
     @media screen and (max-width: 800px) {
       margin: 0;

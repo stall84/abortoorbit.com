@@ -16,7 +16,7 @@ import {
 export default function NavComponent(props: PageProps): ReactComponentElement<any> {
     const { location } = props;
     const [isOpen, setIsOpen] = useState(false);
-    const mobileNavRef = useRef<{ location: null }>({ location: null });
+    const mobileNavRef = useRef<{ location: unknown }>({ location: null });
 
     // This is the 1st implementation of closing the nav when we navigate to a new page.
     // However it is very slow, noticeably slow.

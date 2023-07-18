@@ -8,7 +8,6 @@ import "normalize.css";
 
 
 export default function Layout(props: PageProps) {
-    console.log('location? ', location);
     return (
         <div className={siteContainer}>
             <div className={contentContainer}>
