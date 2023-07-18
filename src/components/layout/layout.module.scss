@@ -1,5 +1,6 @@
 .site-container {
   max-width: 1100px;
+  min-height: 100vh;
   margin: 5rem auto 4rem auto;
   margin-top: clamp(5rem, 4vw, 7rem);
   background: white;
@@ -15,6 +16,9 @@
 }
 
 .content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
   background: white;
