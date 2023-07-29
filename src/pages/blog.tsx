@@ -28,7 +28,7 @@ export default function NavComponent(props: any): React.ReactComponentElement<an
         <>
             <section className="blog-section">
                 <div className="page-h1-wrapper">
-                    <h1> Blog Listings </h1>
+
                 </div>
                 <BlogListingComponent nodes={blogPosts} />
             </section>

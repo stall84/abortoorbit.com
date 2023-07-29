@@ -2,5 +2,9 @@
     box-sizing: border-box;
     margin-top: 4rem;
     margin-bottom: 16rem;
+    width: 100%;
+}
 
+.blog-listing-title {
+    border-bottom: 1px solid var(--white);
 }

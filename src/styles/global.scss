@@ -12,6 +12,13 @@
     --yellow: #{$yellow};
     --white: #{$white};
     --grite: #{$grite};
+    // Base Constants
+    --text: #{$text};
+    --primary: #{$primary};
+    --secondary: #{$secondary};
+    --divide: #{$divide};
+    --background: #{$background};
+    --heading: #{$heading};
 
     font-family: 'Barlow-Reg', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
   }
