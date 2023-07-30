@@ -7,7 +7,7 @@
 
 
     a {
-        color: var(--red);
+        color: var(--primary);
         text-decoration: none;
         font-style: bold;
         &:hover {
@@ -17,6 +17,10 @@
     }
 
     
+}
+
+.blog-link {
+    margin-bottom: 1rem;
 }
 
 .blog-list-item-date-tags {

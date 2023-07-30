@@ -16,7 +16,7 @@
     --text: #{$text};
     --primary: #{$primary};
     --secondary: #{$secondary};
-    --divide: #{$divide};
+    --divide: #{$slate};
     --background: #{$background};
     --heading: #{$heading};
 
@@ -29,6 +29,8 @@
   }
 
   html {
+    color: var(--text);
+    background: var(--background);
     height: 100%;
     font-size: 10px;
   }
@@ -49,6 +51,7 @@
     color: var(--black);
     &:hover {
       text-decoration: underline;
+      color: var(--primary);
     }
   }
 
@@ -113,27 +116,36 @@
   }
 
   @media (prefers-color-scheme: dark) {
+    // Reset constants for dark theme
+    :root {
+      --text: #{$background};
+      --divide: #{$secondary};
+    }
 
     html {
       background: var(--blueGray);
-      color: var(--white);
+      color: var(--text);
       scrollbar-width: thin;
       scrollbar-color: var(--darkGray) var(--darkRed);
     }
 
     a {
-      color: var(--grite);
+      color: var(--primary);
+      &:hover {
+        color: var(--background);
+      }
     }
   }
 
   // Global classes for pages/posts
 
   .page-h1-wrapper {
+    width: 100%;
     margin-top: 1rem;
-    margin-bottom: 2rem;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: var(--grite);
+    margin-bottom: 3rem;
+    // border-bottom-style: solid;
+    // border-bottom-width: 1px;
+    // border-bottom-color: var(--divide);
   }
   
   // Anchor Footer 

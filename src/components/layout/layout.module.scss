@@ -3,7 +3,7 @@
   min-height: 100vh;
   margin: 5rem auto 4rem auto;
   margin-top: clamp(5rem, 4vw, 7rem);
-  background: white;
+  // background: white;
   padding: 2rem;       // Fallback if browser doesn't support clamp()
   padding: clamp(2rem, 1vw, 4rem);
   // box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.044);
@@ -21,7 +21,7 @@
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  background: white;
+  // background: white;
   padding: 1.5rem;
 
 }
@@ -47,8 +47,8 @@
   
 
     .content-container {
-      background: var(--blueGray);
-      color: var(--grite);
+      // background: var(--blueGray);
+      // color: var(--grite);
     }
   }
 
