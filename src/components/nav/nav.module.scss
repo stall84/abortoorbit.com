@@ -1,7 +1,8 @@
 .nav-component {
-    --rotate: 0deg;    // variable
+    --rotate: 0deg; // variable
     --scaleUp: 1;
     margin-bottom: 18rem;
+
     @media screen and (max-width: 800px) {
         display: none;
     }
@@ -31,27 +32,31 @@
 
         a {
             font-size: 3rem;
+
             &:hover {
                 text-decoration: none;
                 // color: var(--darkRed);
             }
+
             &[aria-current="page"] {
                 color: var(--darkRed);
             }
+
             @media (max-width: 800px) {
                 font-size: 2rem;
-              }
+            }
         }
     }
-    
+
 }
 
 .mobile-nav-component {
     display: none;
+
     @media screen and (max-width: 800px) {
         display: block;
         position: relative;
-        
+
     }
 
     .mobile-nav-menu {
@@ -61,35 +66,36 @@
         align-items: center;
         list-style: none;
     }
+
     // The overlay container and its contents (nav items) could be un-nested, but leaving it
     // nested to make it easier to see the structure.
     .mobile-nav-overlay-container {
-        left: -2rem;    // Coordinate with the .content-container in layout.module.scss
+        left: -2rem; // Coordinate with the .content-container in layout.module.scss
         position: absolute;
         width: 100vw;
         height: 100vh;
         z-index: 1;
         background-color: var(--red);
         padding-top: 3rem;
-    
-    .mobile-nav-list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
 
-        .mobile-nav-item {
-            padding: 1rem 3rem;
-            font-size: 3rem;
+        .mobile-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            a {
+                color: var(--heading);
+            }
+
+            .mobile-nav-item {
+                padding: 1rem 3rem;
+                font-size: 3rem;
+
+            }
 
         }
-    
+
     }
 
 }
-
-}
-
-
-
-

@@ -1,4 +1,5 @@
 .logo {
+
     // font-family: 'Barlow-Medium', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
     @media screen and (max-width: 800px) {
         display: none;
@@ -22,32 +23,37 @@
             // font-size: 3rem;
             font-size: 3.5rem;
             line-height: 1;
-            display: inline-block;      // Without this, no transforms will work.
+            display: inline-block; // Without this, no transforms will work.
             transform: scale(var(--scale)) translateY(var(--translateY));
             transition: transform 0.3s linear;
-            
+
 
             &:hover {
                 --scale: 1;
                 --translateY: -0.2em;
             }
+
             @media screen and (max-width: 800px) {
                 font-size: 1.5rem;
                 --translateY: -0.3em;
             }
         }
-      }
-    
+    }
+
 }
 
 .mobile-logo {
-    
-    display: none; 
-    
-    @media screen and (max-width: 800px){
-        font-family: 'Barlow-Medium', 'Roboto-Condensed-Reg', 'Inter-Reg', BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", -apple-system, sans-serif;
-        text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
+
+    display: none;
+
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
         display: block;
         font-size: 5rem;
     }
-} 
+}

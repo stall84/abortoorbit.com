@@ -5,10 +5,9 @@
 
     h1 {
         font-size: 5rem;
-        color: var(--darkGray);
     }
 
-    
+
 }
 
 .blog-post-template-titlebox {
@@ -20,17 +19,30 @@
 
 .blog-post-template-provider {
     margin-top: 6rem;
+
+    p {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    div {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
+
+
 @media screen and (max-width: 800px) {
-    
+
     .blog-post-template-container {
 
         margin-top: 3rem;
-        
+
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
         }
+
         h2 {
             font-size: 2.5rem;
             margin: 0 auto 2rem auto;
@@ -41,5 +53,5 @@
         margin-top: 3rem;
         margin-bottom: 2rem;
     }
-    
-  }
+
+}
