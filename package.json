@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy:apply": "cd cicd/terraform && terraform apply -auto-approve"
+    "deploy:apply": "gatsby build && cd cicd/terraform && terraform apply -auto-approve"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
