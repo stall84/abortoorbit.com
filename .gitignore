@@ -4,6 +4,7 @@ public
 src/gatsby-types.d.ts
 **/.DS_Store
 **/.env
+**/dist/
 # Local .terraform directories
 **/.terraform/*
 
