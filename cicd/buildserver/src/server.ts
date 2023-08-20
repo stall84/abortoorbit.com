@@ -18,6 +18,9 @@ socketInstance.getInstance(server);
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Routing
 app.use('/', routes);
 
 

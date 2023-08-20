@@ -4,7 +4,7 @@ import { Server, Socket } from "socket.io";
 class SocketInstance {
     io: Server;
 
-    getInstance(httpServer: any) {
+    getInstance(httpServer?: any) {
         if (!this.io) {
             console.log('No socket found, creating new...')
             this.io = new Server(httpServer, {
