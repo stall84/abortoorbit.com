@@ -6,9 +6,8 @@ const router = express.Router();
 // const socket = socketInstance.getInstance();
 
 router.get('/', (req, res) => {
-    // console.log('socketInstance?: ', socket)
-    // socket.emit('message', 'Socket Emitted...')
-    res.json({ message: ' Routed / ...' });
+
+    res.json({ message: ' Routed blerp HERP? / ...' });
 })
 
 export default router;

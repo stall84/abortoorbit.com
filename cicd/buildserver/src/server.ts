@@ -5,15 +5,16 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 //
-import routes from "./routes/index";
-import socketInstance from "./services/socket";
+import slash from "./routes/index";
+import testPayload from "./routes/test-payload";
+// import socketInstance from "./services/socket";
 
 // Setup server
 const app = express();
 const server = http.createServer(app);
 
 // Init socket instance (singleton);
-socketInstance.getInstance(server);
+// socketInstance.getInstance(server);
 
 // Middleware
 app.use(cors());
@@ -21,7 +22,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routing
-app.use('/', routes);
+app.use('/', slash);
+app.use('/test-payload', testPayload);
 
 
 server.listen(process.env.PORT, () => {
