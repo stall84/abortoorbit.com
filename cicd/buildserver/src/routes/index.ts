@@ -1,13 +1,18 @@
 import express from "express";
 import socketInstance from "../services/socket";
+import buildHook from "../controllers/build-hook"
+import testGet from "../controllers/test-get"
 
 const router = express.Router();
 
 // const socket = socketInstance.getInstance();
 
-router.get('/', (req, res) => {
+router
+    .route('/test-get')
+    .get(testGet)
 
-    res.json({ message: ' Routed blerp HERP? / ...' });
-})
+router
+    .route('/build-hook')
+    .post(buildHook)
 
 export default router;
