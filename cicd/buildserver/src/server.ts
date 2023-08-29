@@ -5,8 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 
 //
-import slash from "./routes/index";
-import testPayload from "./routes/test-payload";
+import router from "./routes/index";
 // import socketInstance from "./services/socket";
 
 // Setup server
@@ -22,8 +21,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routing
-app.use('/', slash);
-app.use('/test-payload', testPayload);
+app.use(router);
+// app.use('/test-payload', testPayload);
 
 
 server.listen(process.env.PORT, () => {
