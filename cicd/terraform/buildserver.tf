@@ -112,7 +112,7 @@ resource "aws_iam_instance_profile" "ec2_instance_profile" {
 
 resource "aws_key_pair" "ssh_key" {
   key_name   = "build_server_ssh_key"
-  public_key = file("~/.ssh/build_id_rsa.pub")
+  public_key = file("~/.ssh/new_key_pair.pub")
 }
 
 resource "aws_eip" "ato_build_server_eip" {
@@ -125,7 +125,7 @@ resource "aws_instance" "ato_build_server_instance" {
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
   security_groups      = [aws_security_group.ato_build_server_sg.name]
   key_name             = aws_key_pair.ssh_key.key_name
-  user_data            = file("./utils/startup.sh")
+  user_data            = data.cloudinit_config.ato_build_server_cloudinit.rendered
 
   tags = {
     "key"   = "ec2_instance"
@@ -133,24 +133,17 @@ resource "aws_instance" "ato_build_server_instance" {
   }
 }
 
-# resource "aws_launch_configuration" "ato_build_server_launch_config" {
-#   name                 = "ATO-Build-Server-Launch-Config"
-#   image_id             = data.aws_ami.aws_linux_23.id
-#   instance_type        = "t2.micro"
-#   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
-#   security_groups      = [aws_security_group.ato_build_server_sg.name]
-#   key_name             = aws_key_pair.ssh_key.key_name
-#   user_data            = <<EOF
-#   #!/bin/bash
-#   yum update -y
-#   yum install -y httpd -y
-#   systemctl start httpd
-#   chkconfig httpd on
-#   export INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
-#   echo "<html><body><h1>Hello from Build Server</h1><p>Instance ID: $INSTANCE_ID</p></body></html>" > /var/www/html/index.html
+data "cloudinit_config" "ato_build_server_cloudinit" {
+  gzip          = false
+  base64_encode = false
 
-# EOF
-# }
+  part {
+    filename     = "main-startup.sh"
+    content_type = "text/x-shellscript"
+    content      = file("./scripts/main-startup.sh")
+  }
+
+}
 
 
 output "EIP" {
