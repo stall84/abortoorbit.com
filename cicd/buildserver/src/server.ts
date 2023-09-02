@@ -4,7 +4,6 @@ import http from "http";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-//
 import router from "./routes/index";
 // import socketInstance from "./services/socket";
 
