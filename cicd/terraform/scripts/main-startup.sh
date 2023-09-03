@@ -27,8 +27,8 @@ echo "<html><body><h1>Hello from Build Server</h1><p>Instance ID: $INSTANCE_ID</
 echo "---------- END MAIN-STARTUP SECTION ----------"
 echo "---------- BEGGINING AFTER STARTUP JOBS ----------"
 
-su ec2-user
-whoami
+# su ec2-user
+# whoami
 
 echo "---------- GIT CLONE OF ATO REPO ----------"
 
@@ -42,7 +42,8 @@ echo "---------- NPM INSTALL BUILDSERVER ----------"
 cd ~/abortoorbit.com/cicd/buildserver && npm install
 
 echo "---------- SET DEV-TEST.ENV AND CHMOD BUILD-SCRIPT ----------"
-echo "HOST=0.0.0.0\nPORT=8181\nNODE_ENV=development" > ~/abortoorbit.com/cicd/buildserver/.env
+echo "HOST=0.0.0.0" > ~/abortoorbit.com/cicd/buildserver/.env
+echo "PORT=8181" >> ~/abortoorbit.com/cicd/buildserver/.env
 cd ~/abortoorbit.com/cicd/buildserver/scripts && chmod u+x build-script.sh
 
 echo "---------- START SERVER ----------"
