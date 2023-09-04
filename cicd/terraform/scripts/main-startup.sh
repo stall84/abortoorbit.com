@@ -7,6 +7,7 @@ echo "---------- BEGIN MAIN-STARTUP.SH ----------"
 yum update -y
 yum install httpd -y
 yum install git -y
+yum install terraform -y
 yum install nodejs -y
 yum install npm -y
 
