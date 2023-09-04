@@ -36,18 +36,18 @@ cd ~
 git clone https://github.com/stall84/aborttoorbit.com.git
 
 echo "---------- NPM INSTALL ATO ----------"
-cd ~/abortoorbit.com && npm install
+cd ~/aborttoorbit.com && npm install
 
 echo "---------- NPM INSTALL BUILDSERVER ----------"
-cd ~/abortoorbit.com/cicd/buildserver && npm install
+cd ~/aborttoorbit.com/cicd/buildserver && npm install
 
 echo "---------- SET DEV-TEST.ENV AND CHMOD BUILD-SCRIPT ----------"
-echo "HOST=0.0.0.0" > ~/abortoorbit.com/cicd/buildserver/.env
-echo "PORT=8181" >> ~/abortoorbit.com/cicd/buildserver/.env
-cd ~/abortoorbit.com/cicd/buildserver/scripts && chmod u+x build-script.sh
+echo "HOST=0.0.0.0" > ~/aborttoorbit.com/cicd/buildserver/.env
+echo "PORT=8181" >> ~/aborttoorbit.com/cicd/buildserver/.env
+cd ~/aborttoorbit.com/cicd/buildserver/scripts && chmod u+x build-script.sh
 
 echo "---------- START SERVER ----------"
 
-cd ~/abortoorbit.com/cicd/buildserver && npm run start
+cd ~/aborttoorbit.com/cicd/buildserver && npm run start
 
 echo "---------- SERVER STARTED ----------"
