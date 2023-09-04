@@ -3,7 +3,9 @@
 echo "---------- TESTING BUILD SCRIPT INIT ----------" >> ~/build-script.log
 echo "---------- BEGIN BUILD-SCRIPT.SH ----------" >> ~/build-script.log
 
-which gatsby >> ~/build-script.log
-gatsby --version >> ~/build-script.log
+# which gatsby >> ~/build-script.log
+# gatsby --version >> ~/build-script.log
+
+cd ~/aborttoorbit.com && npm run build
 
 echo "---------- END BUILD-SCRIPT.SH ----------" >> ~/build-script.log
