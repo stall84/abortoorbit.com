@@ -19,6 +19,12 @@ chown -R ec2-user:apache /var/www
 chmod 2775 /var/www
 chkconfig httpd on
 
+echo "---------- SET ENV VAR ALIASES ----------"
+echo 'alias findNode="ps -ef | grep node"' >> ~/.bashrc
+
+echo 'alias openPorts="lsof -i -P -n | grep LISTEN"' >> ~/.bashrc
+
+export 
 echo "---------- HTTPD/APACHE CONFIG COMPLETE ----------"
 
 export INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
