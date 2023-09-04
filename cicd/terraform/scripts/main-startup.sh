@@ -33,7 +33,7 @@ echo "---------- BEGGINING AFTER STARTUP JOBS ----------"
 echo "---------- GIT CLONE OF ATO REPO ----------"
 
 cd ~
-git clone https://github.com/stall84/abortoorbit.com.git
+git clone https://github.com/stall84/aborttoorbit.com.git
 
 echo "---------- NPM INSTALL ATO ----------"
 cd ~/abortoorbit.com && npm install
