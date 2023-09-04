@@ -4,7 +4,7 @@ import { exec } from "node:child_process";
 
 export default function buildHook(req: Request, res: Response, next: NextFunction) {
     console.log('buildHook controller executed...')
-
+    console.log('buildHook REQ: ', req)
     try {
         exec('source ~/aborttoorbit.com/cicd/buildserver/scripts/build-script.sh', { shell: '/bin/bash' }, (obj: any) => console.log('Great Success!', obj))
         return res.status(200).json({
