@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "deploy:apply": "gatsby build && cd cicd/terraform && terraform apply -auto-approve",
+    "deploy:apply": "gatsby build && cd cicd/terraform && terraform init && terraform apply -auto-approve",
     "remote:echo": "echo 'Hello, world!' >> ~/hello.txt"
   },
   "dependencies": {
