@@ -121,7 +121,7 @@ resource "aws_eip" "ato_build_server_eip" {
 
 resource "aws_instance" "ato_build_server_instance" {
   ami                  = data.aws_ami.aws_linux_23.id
-  instance_type        = "t2.micro"
+  instance_type        = "t2.small"
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
   security_groups      = [aws_security_group.ato_build_server_sg.name]
   key_name             = aws_key_pair.ssh_key.key_name
