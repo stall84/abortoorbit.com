@@ -6,7 +6,7 @@ export default function buildHook(req: Request, res: Response, next: NextFunctio
     console.log('buildHook controller executed...')
     console.log('buildHook REQ: ', req)
     try {
-        exec('source ~/aborttoorbit.com/cicd/buildserver/scripts/build-script.sh', { shell: '/bin/bash' }, (obj: any) => console.log('Great Success!', obj))
+        exec('source ~/aborttoorbit.com/cicd/scripts/build-script.sh', { shell: '/bin/bash' }, (obj: any) => console.log('Great Success!', obj))
         return res.status(200).json({
             message: "buildHook request received...",
             reqBody: `${req.body.action}`
