@@ -96,7 +96,16 @@ resource "aws_iam_role_policy" "ec2_iam_role_policy" {
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:*", "cloudwatch:*", "logs:*", "s3:*", "cloudfront:*"
+        "ec2:*", 
+        "cloudwatch:*", 
+        "logs:*", 
+        "s3:*", 
+        "cloudfront:*",
+        "acm:ListCertificates",
+        "ssm:UpdateInstanceInformation",
+        "iam:GetInstanceProfile",
+        "iam:GetRolePolicy",
+        "iam:GetRole"
         ],
       "Resource": "*"
     }
