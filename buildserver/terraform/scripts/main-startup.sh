@@ -23,7 +23,7 @@ echo "---------- YUM INSTALLS COMPLETE ---------"
 # chkconfig httpd on
 
 echo "---------- SET ENV VAR ALIASES ----------"
-echo 'alias findNode="ps -ef | grep node"' >> ~/.bashrc
+echo 'alias listNode="ps -ef | grep node"' >> ~/.bashrc
 
 echo 'alias openPorts="lsof -i -P -n | grep LISTEN"' >> ~/.bashrc
 
@@ -48,15 +48,15 @@ echo "---------- NPM INSTALL ATO ----------"
 cd ~/aborttoorbit.com && npm install
 
 echo "---------- NPM INSTALL BUILDSERVER ----------"
-cd ~/aborttoorbit.com/cicd/buildserver && npm install
+cd ~/aborttoorbit.com/buildserver/buildserver && npm install
 
 echo "---------- SET DEV-TEST.ENV AND CHMOD BUILD-SCRIPT ----------"
-echo "HOST=0.0.0.0" > ~/aborttoorbit.com/cicd/buildserver/.env
-echo "PORT=8181" >> ~/aborttoorbit.com/cicd/buildserver/.env
-cd ~/aborttoorbit.com/cicd/buildserver/scripts && chmod u+x build-script.sh
+echo "HOST=0.0.0.0" > ~/aborttoorbit.com/buildserver/buildserver/.env
+echo "PORT=8181" >> ~/aborttoorbit.com/cicd/buildserver/buildserver/.env
+cd ~/aborttoorbit.com/cicd/scripts && chmod u+x build-script.sh
 
 echo "---------- START SERVER ----------"
 
-cd ~/aborttoorbit.com/cicd/buildserver && npm run start
+cd ~/aborttoorbit.com/buildserver/buildserver && npm run start
 
 echo "---------- SERVER STARTED ----------"
