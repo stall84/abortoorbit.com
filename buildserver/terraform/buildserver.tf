@@ -23,7 +23,7 @@ data "aws_ami" "aws_linux_23" {
 }
 
 resource "aws_security_group" "ato_build_server_sg" {
-  name        = "ato_build_server_sg"
+  name        = "ato_build_server_sg-rev2"
   description = "Security group for ATO Build Server (SSH/HTTPS/OUTBOUND)"
 
   # Allow only my atlanta home IP for SSH access.
@@ -66,7 +66,7 @@ resource "aws_security_group" "ato_build_server_sg" {
 }
 
 resource "aws_iam_role" "ec2_iam_role" {
-  name               = "EC2-ATO-Build-Server-Role"
+  name               = "EC2-ATO-Build-Server-Role-Rev2"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -85,7 +85,7 @@ resource "aws_iam_role" "ec2_iam_role" {
 }
 
 resource "aws_iam_role_policy" "ec2_iam_role_policy" {
-  name = "EC2-ATO-Build-Server-Policy"
+  name = "EC2-ATO-Build-Server-Polic-Rev2"
   role = aws_iam_role.ec2_iam_role.id
 
   policy = <<EOF
@@ -106,12 +106,12 @@ resource "aws_iam_role_policy" "ec2_iam_role_policy" {
 }
 
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
-  name = "EC2-ATO-Build-Server-Instance-Profile"
+  name = "EC2-ATO-Build-Server-Instance-Profile-Rev2"
   role = aws_iam_role.ec2_iam_role.name
 }
 
 resource "aws_key_pair" "ssh_key" {
-  key_name   = "build_server_ssh_key"
+  key_name   = "build_server_ssh_key-rev2"
   public_key = file("~/.ssh/new_key_pair.pub")
 }
 
@@ -129,7 +129,7 @@ resource "aws_instance" "ato_build_server_instance" {
 
   tags = {
     "key"   = "ec2_instance"
-    "value" = "ato_build_server"
+    "value" = "ato_build_server-rev2"
   }
 }
 
