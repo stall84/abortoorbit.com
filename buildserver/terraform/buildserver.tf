@@ -96,7 +96,7 @@ resource "aws_iam_role_policy" "ec2_iam_role_policy" {
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:*", "cloudwatch:*", "logs:*", "s3:*"
+        "ec2:*", "cloudwatch:*", "logs:*", "s3:*", "cloudfront:*"
         ],
       "Resource": "*"
     }
