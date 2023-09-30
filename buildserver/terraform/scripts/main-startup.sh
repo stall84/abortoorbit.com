@@ -30,8 +30,8 @@ echo 'alias openPorts="lsof -i -P -n | grep LISTEN"' >> ~/.bashrc
 # export 
 # echo "---------- HTTPD/APACHE CONFIG COMPLETE ----------"
 
-export INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
-echo "<html><body><h1>Hello from Build Server</h1><p>Instance ID: $INSTANCE_ID</p></body></html>" > /var/www/html/index.html
+# export INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+# echo "<html><body><h1>Hello from Build Server</h1><p>Instance ID: $INSTANCE_ID</p></body></html>" > /var/www/html/index.html
 
 echo "---------- END MAIN-STARTUP SECTION ----------"
 echo "---------- BEGGINING AFTER STARTUP JOBS ----------"
