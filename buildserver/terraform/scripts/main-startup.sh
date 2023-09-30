@@ -52,7 +52,7 @@ cd ~/aborttoorbit.com/buildserver/buildserver && npm install
 
 echo "---------- SET DEV-TEST.ENV AND CHMOD BUILD-SCRIPT ----------"
 echo "HOST=0.0.0.0" > ~/aborttoorbit.com/buildserver/buildserver/.env
-echo "PORT=8181" >> ~/aborttoorbit.com/cicd/buildserver/buildserver/.env
+echo "PORT=8181" >> ~/aborttoorbit.com/buildserver/buildserver/.env
 cd ~/aborttoorbit.com/cicd/scripts && chmod u+x build-script.sh
 
 echo "---------- START SERVER ----------"
