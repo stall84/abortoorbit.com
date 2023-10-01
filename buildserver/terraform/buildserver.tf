@@ -101,13 +101,8 @@ resource "aws_iam_role_policy" "ec2_iam_role_policy" {
         "logs:*", 
         "s3:*", 
         "cloudfront:*",
-        "acm:ListCertificates",
-        "acm:DescribeCertificate",
-        "ssm:UpdateInstanceInformation",
-        "iam:GetInstanceProfile",
-        "iam:ListRolePolicies",
-        "iam:GetRolePolicy",
-        "iam:GetRole"
+        "acm:*",
+        "iam:*"
         ],
       "Resource": "*"
     }
