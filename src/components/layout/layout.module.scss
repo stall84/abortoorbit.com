@@ -1,9 +1,9 @@
 .site-container {
+  position: relative;
   max-width: 1100px;
   min-height: 100vh;
-  margin: 5rem auto 4rem auto;
-  margin-top: clamp(5rem, 4vw, 7rem);
-  // background: white;
+  margin: 2rem auto 4rem auto;
+  // margin-top: clamp(5rem, 4vw, 7rem);
   padding: 2rem;       // Fallback if browser doesn't support clamp()
   padding: clamp(2rem, 1vw, 4rem);
   // box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.044);
@@ -15,7 +15,21 @@
 
 }
 
+.site-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+  background-image: url(../../images/abort-panel-1.svg);
+  background-size: cover;
+}
+
 .content-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;

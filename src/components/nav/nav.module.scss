@@ -1,7 +1,7 @@
 .nav-component {
     --rotate: 0deg; // variable
     --scaleUp: 1;
-    margin-bottom: 18rem;
+    margin-bottom: 10rem;
 
     @media screen and (max-width: 800px) {
         display: none;
@@ -35,11 +35,12 @@
 
             &:hover {
                 text-decoration: none;
+                transition: color 0.75s ease-in-out;
                 // color: var(--darkRed);
             }
 
             &[aria-current="page"] {
-                color: var(--darkRed);
+                color: var(--currLink);
             }
 
             @media (max-width: 800px) {
