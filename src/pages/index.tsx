@@ -17,7 +17,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
 
           </div>
-          <p> This is very much a work in progress. For now, check out the <Link to="/blog">Blog</Link></p>
+          <p> This is very much a work in progress. For now, check out the <Link to="/blog">Blog Listings</Link></p>
         </section>
       </div>
     </>

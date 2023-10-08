@@ -4,21 +4,23 @@ h1,h2,h3,h4,h5 {
     
 }
 
-h1,h2,h3,h4,h5:hover {
-    color: var(--color-primary);
+h2:hover {
+    color: var(--primary);
+    transition: color 0.9s ease-in-out;
 }
 
 .blog-post-template-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: auto 1fr auto;
+
 
     h1 {
         font-size: 5rem;
     }
-
-
+    
 }
+
 
 .blog-post-template-titlebox {
     display: flex;
@@ -39,6 +41,13 @@ h1,h2,h3,h4,h5:hover {
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
+
+    span {
+        // Stopgap fix for Gatsby Image wrapper which uses a span
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
 }
 
 
