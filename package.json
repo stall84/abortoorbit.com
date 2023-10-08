@@ -1,8 +1,8 @@
 {
-  "name": "v2-mes-net",
+  "name": "abort-to-orbit",
   "version": "1.0.0",
   "private": true,
-  "description": "v2-mes-net",
+  "description": "personal blogsite for Michael Stallings",
   "author": "Michael Stallings",
   "keywords": [
     "gatsby"

@@ -91,15 +91,15 @@ resource "aws_iam_role_policy" "ec2_iam_role_policy" {
   policy = <<EOF
 {
   "Version": "2012-10-17",
-  "Statement": 
+  "Statement":
   [
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:*", 
-        "cloudwatch:*", 
-        "logs:*", 
-        "s3:*", 
+        "ec2:*",
+        "cloudwatch:*",
+        "logs:*",
+        "s3:*",
         "cloudfront:*",
         "acm:*",
         "iam:*"
@@ -110,7 +110,7 @@ resource "aws_iam_role_policy" "ec2_iam_role_policy" {
 }
   EOF
 }
-
+## TODO: ^^ Cross-ref exactly which IAM actions are needed for this role... having it starred is risky.
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
   name = "EC2-ATO-Build-Server-Instance-Profile-Rev2"
   role = aws_iam_role.ec2_iam_role.name
