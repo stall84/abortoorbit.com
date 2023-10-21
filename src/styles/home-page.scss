@@ -1,5 +1,7 @@
 .home-main-section {
+    margin-top: 9rem;
     margin-bottom: 16rem;
+    font-size: 4rem;
 }
 
 .home-title-section-box {
@@ -7,6 +9,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    font-size: 3rem;
+    
 }
 
 @media screen and (max-width: 800px) {
