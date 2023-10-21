@@ -4,15 +4,15 @@
     box-sizing: border-box;
     margin-bottom: 4rem;
     font-size: 1.9rem;
-
+    font-weight: 500;
 
     a {
-        color: var(--primary);
+        color: var(--text);
         text-decoration: none;
         font-style: bold;
         &:hover {
-            text-decoration: underline;
-            // color: var(--darkRed);
+            text-decoration: none;
+            color: var(--primary);
         }
     }
 

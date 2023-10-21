@@ -3,16 +3,12 @@
   max-width: 1100px;
   min-height: 100vh;
   margin: 2rem auto 4rem auto;
-  // margin-top: clamp(5rem, 4vw, 7rem);
   padding: 2rem;       // Fallback if browser doesn't support clamp()
   padding: clamp(2rem, 1vw, 4rem);
-  // box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.044);
-  // border: 5px solid white;
   @media (max-width: 1100px) {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
   }
-
 }
 
 .site-container::before {
@@ -24,7 +20,12 @@
   width: 100%;
   height: 100%;
   opacity: 0.45;
-  background-image: url(../../images/abort-panel-1.svg);
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.518), 
+      rgba(0, 0, 0, 0.518)
+      ), 
+      url(../../images/abort-panel-1.svg);
   background-size: cover;
 }
 
@@ -35,9 +36,12 @@
   min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  // background: white;
   padding: 1.5rem;
 
+}
+
+main {
+  margin-top: 4rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -56,14 +60,7 @@
 @media (prefers-color-scheme: dark) {
   .site-container {
     background: transparent;
-    // box-shadow: 0 0 0.1rem 0.05rem rgba(255, 255, 255, 0.4);
-    // border: none;
-  
 
-    .content-container {
-      // background: var(--blueGray);
-      // color: var(--grite);
-    }
   }
 
   

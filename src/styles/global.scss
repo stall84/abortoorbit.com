@@ -32,7 +32,7 @@
 
 html {
   color: var(--text);
-  background: var(--background);
+  background: rgba(0, 0, 0, 0.05);
   height: 100%;
   font-size: 10px;
 }
@@ -42,7 +42,7 @@ body {
   font-size: 2rem;
 
   p {
-    font-weight: 500;
+    font-weight: 450;
   }
 
   @media screen and (max-width: 800px) {
@@ -58,7 +58,7 @@ a {
   color: var(--black);
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--primary);
   }
 }

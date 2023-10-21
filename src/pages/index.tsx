@@ -11,11 +11,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div>
         <section className="home-main-section">
           <div className="home-title-section-box">
-            <div className="page-h1-wrapper">
-              <h1>Welcome to the Abort To Orbit Blogsite</h1>
-            </div>
-
-
+            <h1>Welcome to the Abort To Orbit Blogsite</h1>
           </div>
           <p> This is very much a work in progress. For now, check out the <Link to="/blog">Blog Listings</Link></p>
         </section>
