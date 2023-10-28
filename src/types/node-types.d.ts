@@ -22,7 +22,7 @@ export type MdxNode = {
 }
 
 export type CreatePageQueryData = {
-    allMdx: {
+    [key: string]: {
         edges: Array<{
             node: MdxNode
         }>
@@ -44,4 +44,5 @@ export type CreatePageQueryData = {
             }
         }>
     }
+
 }

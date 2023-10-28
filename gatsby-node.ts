@@ -13,8 +13,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     const { createPage } = actions;
 
     const result = await graphql<CreatePageQueryData>(`
-        query {
-            allMdx {
+        {
+            postsGroup: allMdx {
                 edges {
                     node {
                         id
@@ -28,6 +28,12 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
                     }
                 }
             }
+            tagsGroup: allMdx {
+                group(field: {frontmatter: {tags: {name: SELECT }}}) {
+                    fieldValue
+                    totalCount
+                }
+            }
         }
     `);
 
@@ -36,12 +42,13 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         return;
     }
 
-    const { allMdx } = result.data
-
+    const posts = result.data.postsGroup.edges
+    const tags = result.data.tagsGroup
+    console.log('TAGS: ', tags)
 
     reporter.info('*** GraphQL node query successful. Beginning createPages routine... ***')
 
-    allMdx.edges.forEach((edge) => {
+    posts.forEach((edge) => {
         const { node } = edge;
         createPage({
             path: `blog${node.frontmatter.slug}`,
