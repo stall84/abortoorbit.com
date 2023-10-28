@@ -1,8 +1,9 @@
 import path from "path";
 import readingTime from "reading-time";
 import type { GatsbyNode } from "gatsby"
+import * as _ from "lodash";
 
-import { CreatePageQueryData } from "./src/types/node-types";
+import { CreatePageQueryData, MdxNode } from "./src/types/node-types";
 
 import { slugifyFunc } from "./src/utils";
 
@@ -14,14 +15,16 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     const result = await graphql<CreatePageQueryData>(`
         query {
             allMdx {
-                nodes {
-                    id
-                    frontmatter {
-                        slug
-                        title
-                    } 
-                    internal {
-                        contentFilePath
+                edges {
+                    node {
+                        id
+                        frontmatter {
+                            slug
+                            title
+                        } 
+                        internal {
+                            contentFilePath
+                        }
                     }
                 }
             }
@@ -38,13 +41,16 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
 
     reporter.info('*** GraphQL node query successful. Beginning createPages routine... ***')
 
-    allMdx.nodes.forEach((mdxNode) => {
+    allMdx.edges.forEach((edge) => {
+        const { node } = edge;
         createPage({
-            path: `blog${mdxNode.frontmatter.slug}`,
-            component: `${blogPostTemplate}?__contentFilePath=${mdxNode.internal.contentFilePath}`,
-            context: { slug: mdxNode.frontmatter.slug },
+            path: `blog${node.frontmatter.slug}`,
+            component: `${blogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
+            context: { slug: node.frontmatter.slug },
         })
     })
+
+
     reporter.info('*** createPages routine finished successfully ***')
 
 }
