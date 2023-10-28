@@ -8,6 +8,12 @@ import { roundReadingTime } from "../../utils";
 import { blogPostTemplateContainer, blogPostTemplateTitlebox, blogPostTemplateProvider } from "./post-template.module.scss"
 
 export type PostTemplateDataProps = {
+    allMdx: {
+        totalCount: number
+        edges: Array<{
+            node: any
+        }>
+    }
     mdx: {
         body?: string
         frontmatter: {
