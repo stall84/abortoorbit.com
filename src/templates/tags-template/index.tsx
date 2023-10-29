@@ -2,19 +2,19 @@ import React from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
 import { PostTemplateDataProps } from '../post-template';
 
-export default function TagsTemplate({ pageContext, data }: PageProps<PostTemplateDataProps>) {
-    const { title, date, tags, description, slug, bannerImage } = data.mdx.frontmatter;
+export default function TagsTemplate({ pageContext, data }: PageProps<any>): React.ReactComponentElement<any> {
+    const { tag, count } = pageContext;
+    const { edges } = data.allMdx;
 
-    const { edges, totalCount } = data.allMdx
-    const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'
-        } tagged with "${tags?.[0]}"`;
+    const tagHeader = `${count} post${count === 1 ? '' : 's'
+        } tagged with "${tag}"`;
 
     return (
         <div>
             <h1>{tagHeader}</h1>
             <ul>
                 {edges.map(({ node }) => {
-                    const { slug } = node.fields
+                    const { slug } = node.frontmatter.slug
                     const { title } = node.frontmatter
                     return (
                         <li key={slug}>
@@ -23,11 +23,31 @@ export default function TagsTemplate({ pageContext, data }: PageProps<PostTempla
                     )
                 })}
             </ul>
-            {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-            <Link to="/tags">All tags</Link>
+
+            {/* <Link to="/tags">All tags</Link> */}
         </div>
     )
 }
+
+export const query = graphql`
+    query($tag: String) { 
+        allMdx(
+            filter: { frontmatter: { tags: {elemMatch: {name: { in: [$tag] } }}}}
+        ){
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        slug
+                        tags {
+                            name
+                            slug
+                        }
+                    }
+                }
+            }
+            
+        }
+
+    }
+`

@@ -6,6 +6,7 @@ import * as _ from "lodash";
 import { CreatePageQueryData, MdxNode } from "./src/types/node-types";
 
 import { slugifyFunc } from "./src/utils";
+const TagsTemplate = path.resolve(`src/templates/tags-template/index.tsx`);
 
 const blogPostTemplate = path.resolve(`src/templates/post-template/index.tsx`);
 
@@ -42,9 +43,9 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         return;
     }
 
-    const posts = result.data.postsGroup.edges
-    const tags = result.data.tagsGroup
-    console.log('TAGS: ', tags)
+    const posts = result.data.postsGroup.edges;
+    const tags = result.data.tagsGroup.group;
+
 
     reporter.info('*** GraphQL node query successful. Beginning createPages routine... ***')
 
@@ -54,6 +55,17 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
             path: `blog${node.frontmatter.slug}`,
             component: `${blogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
             context: { slug: node.frontmatter.slug },
+        })
+    })
+
+    tags.forEach((tagGroup: any) => {
+        createPage({
+            path: `/tags/${_.kebabCase(tagGroup.fieldValue)}`,
+            component: TagsTemplate,
+            context: {
+                tag: tagGroup.fieldValue,
+                count: tagGroup.totalCount,
+            }
         })
     })
 
