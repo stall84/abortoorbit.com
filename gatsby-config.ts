@@ -37,11 +37,13 @@ const config: GatsbyConfig = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1200,
+              maxWidth: 1900,
+              quality: 70,
+              // wrapperStyle: (fluidResult: any) => `height: ${fluidResult.presentationHeight / fluidResult.aspectRatio}`,
             },
           },
         ],
-        extensions: [`.mdx`, `.md`],
+        extensions: [`.mdx`, `.md`,],
         // mdxOptions: {  // This is exploding the build for some reason
         //   remarkPlugins: [remarkGfm]
         // },
