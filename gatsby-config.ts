@@ -37,8 +37,9 @@ const config: GatsbyConfig = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 1900,
-              quality: 70,
+              maxWidth: 1200,
+              quality: 80,
+              backgroundColor: 'transparent',
               // wrapperStyle: (fluidResult: any) => `height: ${fluidResult.presentationHeight / fluidResult.aspectRatio}`,
             },
           },

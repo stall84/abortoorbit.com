@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
-import { logo, name, letter, mobileLogo } from "./logo.module.scss";
+import { logo, name, word, mobileLogo } from "./logo.module.scss";
 import useSiteMetadata from "../../hooks/use-site-metadata";
 
 export default function LogoComponent(props: any): React.ReactComponentElement<any> {
@@ -10,8 +10,8 @@ export default function LogoComponent(props: any): React.ReactComponentElement<a
             <div className={logo}>
                 <Link to="/">
                     <span className={name}>
-                        {siteTitle.split('').map((ele: string) => {
-                            return <span className={letter}>{ele}</span>
+                        {siteTitle.split(' ').map((ele: string) => {
+                            return <span className={word}>{ele}</span>
                         })}
                     </span>
                 </Link>

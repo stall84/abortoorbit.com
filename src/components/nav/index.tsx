@@ -11,6 +11,7 @@ import {
     mobileNavItem,
     mobileNavOverlayContainer,
     mobileNavMenu,
+    navListItems,
 } from "./nav.module.scss";
 
 export default function NavComponent(props: PageProps): ReactComponentElement<any> {
@@ -35,9 +36,9 @@ export default function NavComponent(props: PageProps): ReactComponentElement<an
                     <li className={navItem}>
                         <LogoComponent />
                     </li>
-                    <li className={navItem}>
-                        <Link to="/">HOME</Link>
-                    </li>
+
+                </ul>
+                <ul className={navListItems}>
                     <li className={navItem}>
                         <Link to="/blog">BLOG</Link>
                     </li>
@@ -65,9 +66,6 @@ export default function NavComponent(props: PageProps): ReactComponentElement<an
                 {isOpen && (
                     <div className={mobileNavOverlayContainer}>
                         <ul className={mobileNavList}>
-                            <li className={mobileNavItem}>
-                                <Link to="/">HOME</Link>
-                            </li>
                             <li className={mobileNavItem}>
                                 <Link to="/blog">BLOG</Link>
                             </li>
